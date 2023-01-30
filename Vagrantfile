@@ -16,6 +16,10 @@ $script = <<-'SCRIPT'
 sudo apt -y install sshpass
 sudo pip3 install PyMySQL
 sudo pip3 install zabbix-api
+ansible-galaxy collection install -r /otus/requirements.yml
+ansible-galaxy role install -r /otus/requirements.yml
+ansible-playbook -i /otus/otus.inv /otus/zabbix.yml
+ansible-playbook -i /otus/otus.inv /otus/wordpress-lamp_ubuntu1804/playbook.yml
 SCRIPT
 
 Vagrant.configure(2) do |config|

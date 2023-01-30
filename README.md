@@ -17,24 +17,6 @@ vagrant up
 * Web: web-сервер для демонстрации подключения к мониторингу
 * Ansible: ansible для установки софта на 2 предыдущих
 
-## Запускаем установку софта ансиблом
-
-### Установка зависимостей
-
-```
-vagrant ssh ansible
-
-ansible-galaxy collection install -r /otus/requirements.yml
-ansible-galaxy role install -r /otus/requirements.yml
-```
-
-### Установка софта на виртуальные машины
-
-```
-ansible-playbook -i /otus/otus.inv /otus/zabbix.yml
-ansible-playbook -i /otus/otus.inv /otus/wordpress-lamp_ubuntu1804/playbook.yml
-```
-
 ## Правим hosts
 
 В /etc/hosts добавляем строки:
